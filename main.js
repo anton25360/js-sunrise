@@ -11,8 +11,8 @@ fetch('https://randomuser.me/api/')
     //gets random coordinates
     var city = data.results[0].location.city;
     var country = data.results[0].location.country;
-    var long = data.results[0].location.longitude;
-    var lat = data.results[0].location.latitude;
+    var long = data.results[0].location.coordinates.longitude;
+    var lat = data.results[0].location.coordinates.latitude;
     console.log(city + ', ' + country);
     console.log(long);
     console.log(lat);
