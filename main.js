@@ -12,6 +12,9 @@ fetch('https://randomuser.me/api/')
         .then(function (data) {
         var sunrise = data.results.sunrise;
         var sunset = data.results.sunset;
+        if (sunrise == null) {
+            document.location.reload(true);
+        }
         document.querySelector('#city').innerHTML += "" + city;
         document.querySelector('#country').innerHTML += "" + country;
         document.querySelector('#sunrise').innerHTML += "Sunrise: " + sunrise;
