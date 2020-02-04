@@ -1,14 +1,8 @@
 "use strict";
-console.log('hi there my dude');
-fetch('https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today')
-    .then(function (response) { return response.json(); })
-    .then(function (data) {
-    console.log(data);
-});
 fetch('https://randomuser.me/api/')
     .then(function (response) { return response.json(); })
     .then(function (data) {
-    //gets random coordinates
+    //gets random location data
     var city = data.results[0].location.city;
     var country = data.results[0].location.country;
     var long = data.results[0].location.coordinates.longitude;
@@ -16,4 +10,12 @@ fetch('https://randomuser.me/api/')
     console.log(city + ', ' + country);
     console.log(long);
     console.log(lat);
+    fetch("https://api.sunrise-sunset.org/json?lat=" + lat + "&lng=-" + long + "&date=today")
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+        var sunrise = data.results.sunrise;
+        var sunset = data.results.sunset;
+        console.log(sunrise);
+        console.log(sunset);
+    });
 });
