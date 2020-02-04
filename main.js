@@ -17,5 +17,9 @@ fetch('https://randomuser.me/api/')
         var sunset = data.results.sunset;
         console.log(sunrise);
         console.log(sunset);
+        document.querySelector('#city').innerHTML += "" + city;
+        document.querySelector('#country').innerHTML += "" + country;
+        document.querySelector('#sunrise').innerHTML += "Sunrise: " + sunrise;
+        document.querySelector('#sunset').innerHTML += "Sunset: " + sunset;
     });
 });
