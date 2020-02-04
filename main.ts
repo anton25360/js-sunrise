@@ -8,19 +8,12 @@ fetch('https://randomuser.me/api/')
         let long: number = data.results[0].location.coordinates.longitude
         let lat: number = data.results[0].location.coordinates.latitude
 
-        console.log(city + ', ' + country);
-        console.log(long);
-        console.log(lat);
-
         fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=-${long}&date=today`)
             .then((response) => response.json())
             .then((data) => {
 
                 var sunrise = data.results.sunrise
                 var sunset = data.results.sunset
-
-                console.log(sunrise);
-                console.log(sunset);
 
                 document.querySelector('#city').innerHTML += `${city}`
                 document.querySelector('#country').innerHTML += `${country}`
