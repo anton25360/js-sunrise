@@ -21,8 +21,8 @@ fetch('https://randomuser.me/api/')
 
                 document.querySelector('#city')!.innerHTML = `${city}`
                 document.querySelector('#country')!.innerHTML = `${country}`
-                document.querySelector('#sunrise')!.innerHTML = `Sunrise: ${sunrise}`
-                document.querySelector('#sunset')!.innerHTML = `Sunset: ${sunset}`
+                document.querySelector('#sunrise')!.innerHTML = `Sunrise: ${sunrise} UTC`
+                document.querySelector('#sunset')!.innerHTML = `Sunset: ${sunset} UTC`
 
             })
     })
