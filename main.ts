@@ -19,12 +19,10 @@ fetch('https://randomuser.me/api/')
                     document.location.reload(true)
                 }
 
-                document.querySelector('#city')!.innerHTML += `${city}`
-                document.querySelector('#country')!.innerHTML += `${country}`
-                document.querySelector('#sunrise')!.innerHTML += `Sunrise: ${sunrise}`
-                document.querySelector('#sunset')!.innerHTML += `Sunset: ${sunset}`
-                
+                document.querySelector('#city')!.innerHTML = `${city}`
+                document.querySelector('#country')!.innerHTML = `${country}`
+                document.querySelector('#sunrise')!.innerHTML = `Sunrise: ${sunrise}`
+                document.querySelector('#sunset')!.innerHTML = `Sunset: ${sunset}`
+
             })
     })
-
-
